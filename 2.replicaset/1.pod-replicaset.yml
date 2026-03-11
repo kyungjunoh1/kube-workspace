@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-basic
+spec:
+  replicas: 5 # 컨테이너가 5개 만들어진다는 의미
+  selector:
+    matchLabels:
+      app: value
+  template: # pod 설정하는 부분
+    metadata:
+      labels:
+        app: value
+    spec:
+      containers:
+        - name: nginx-con
+          image: nginx:latest
+          resources:
+            limits:
+              memory: "100Mi"
+              cpu: "500m"    

@@ -1,0 +1,15 @@
+### 명령어
+- kubect1 get nodes
+- kubectl get pod
+- kubectl apply -f ./1.pod-basic.yml
+- kubectl get pod
+- docker pull nginx:latest
+- docker images
+- kubectl get pod
+- kubectl delete -f ./1.pod-basic.yml
+- kubectl get pod
+- kubectl apply -f 1.pod-basic.yml
+- kubectl get pod -o wide
+- kubectl exec -it myapp -- bash
+- root@myapp:/# curl 10.244.2.2
+- 
