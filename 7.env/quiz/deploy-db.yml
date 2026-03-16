@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  namespace: delivery
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: mysql:8.4
+        ports:
+        - containerPort: 3306
+        envFrom:
+          - secretRef:
+             name: mysecret
+          - configMapRef:
+             name: my-cm  
